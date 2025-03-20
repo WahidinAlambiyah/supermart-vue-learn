@@ -1,6 +1,6 @@
 <script setup>
 import { useLayout } from '@/layout/composables/layout';
-import AppConfigurator from './AppConfigurator.vue';
+import CommerceConfigurator from './CommerceConfigurator.vue';
 
 const { toggleMenu, toggleDarkMode, isDarkTheme } = useLayout();
 </script>
@@ -89,7 +89,7 @@ const { toggleMenu, toggleDarkMode, isDarkTheme } = useLayout();
                     >
                         <i class="pi pi-palette"></i>
                     </button>
-                    <AppConfigurator />
+                    <CommerceConfigurator />
                 </div>
             </div>
 

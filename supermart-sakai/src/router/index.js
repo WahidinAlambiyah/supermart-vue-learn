@@ -1,4 +1,5 @@
 import AppLayout from '@/layout/AppLayout.vue';
+import CommerceLayout from '@/layout/ecommerce/CommerceLayout.vue';
 import { createRouter, createWebHistory } from 'vue-router';
 
 const router = createRouter({
@@ -11,8 +12,24 @@ const router = createRouter({
         },
         {
             path: '/',
+            component: CommerceLayout,
+            children: [
+                {
+                    path: '/home',
+                    name: 'home',
+                    component: () => import('@/views/pages/ecommerce/HomeCommerce.vue')
+                },
+            ] 
+        },
+        {
+            path: '/',
             component: AppLayout,
             children: [
+                {
+                    path: '/home',
+                    name: 'home',
+                    component: () => import('@/views/pages/ecommerce/HomeCommerce.vue')
+                },
                 {
                     path: '/dashboard',
                     name: 'dashboard',
