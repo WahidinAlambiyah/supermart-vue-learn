@@ -2,8 +2,10 @@
 import FloatingConfigurator from '@/components/FloatingConfigurator.vue';
 import { ref } from 'vue';
 
-const email = ref('');
+const name = ref('');
+const emailorphone = ref('');
 const password = ref('');
+const repassword = ref('');
 const checked = ref(false);
 </script>
 
@@ -74,39 +76,46 @@ const checked = ref(false);
                                 />
                             </g>
                         </svg>
-                        <div class="text-surface-900 dark:text-surface-0 text-3xl font-medium mb-4">Selamat datang di Supermart!</div>
-                        <span class="text-muted-color font-medium">masuk untuk berbelanja</span>
+                        <div class="text-surface-900 dark:text-surface-0 text-3xl font-medium mb-4">Buat akun Supermart</div>
                     </div>
 
                     <div>
-                        <label for="email1" class="block text-surface-900 dark:text-surface-0 text-xl font-medium mb-2">Email</label>
-                        <InputText id="email1" type="text" placeholder="Alamat email" class="w-full md:w-[30rem] mb-8" v-model="email" />
-
-                        <label for="password1" class="block text-surface-900 dark:text-surface-0 font-medium text-xl mb-2">Kata sandi</label>
-                        <Password id="password1" v-model="password" placeholder="Kata sandi" :toggleMask="true" class="mb-4" fluid :feedback="false"></Password>
-
-                        <div class="flex items-center justify-between mt-2 mb-8 gap-8">
-                            <div class="flex items-center">
-                                <Checkbox v-model="checked" id="rememberme1" binary class="mr-2"></Checkbox>
-                                <label for="rememberme1">Ingat saya</label>
-                            </div>
-                            <span class="font-medium no-underline ml-2 text-right cursor-pointer text-primary">Lupa kata sandi?</span>
+                        <div class="flex flex-col gap-2">
+                            <label for="name1" class="block text-surface-900 dark:text-surface-0 text-xl font-medium">Nama</label>
+                            <InputText id="name1" type="text" placeholder="Nama lengkap anda" class="w-full md:w-[30rem] mb-8" v-model="name" />
                         </div>
-                        <Button label="Masuk" class="w-full" as="router-link" to="/login"></Button>
-                    </div>
-                    <br />
+
+                        <div class="flex flex-col gap-2">
+                            <label for="emailorphone1" class="block text-surface-900 dark:text-surface-0 text-xl font-medium">Nomor Ponsel atau Email</label>
+                            <InputText id="emailorphone1" type="text" placeholder="Nomor ponsel atau alamat email" class="w-full md:w-[30rem] mb-8" v-model="emailorphone" />
+                        </div>
+
+                        <div class="flex flex-col gap-2">
+                            <label for="password1" class="block text-surface-900 dark:text-surface-0 font-medium text-xl">Kata Sandi</label>
+                            <Password id="password1" v-model="password" placeholder="Kata sandi" :toggleMask="true" fluid :feedback="false"></Password>
+                            <Tag value="Kata sandi harus lebih dari 6 karakter." icon="pi pi-exclamation-circle" severity="warn" class="mr-2 mb-4"></Tag>
+                        </div>
+
+                        <div class="flex flex-col gap-">
+                            <label for="repassword1" class="block text-surface-900 dark:text-surface-0 font-medium text-xl">Tulis ulang kata sandi</label>
+                            <Password id="repassword1" v-model="repassword" placeholder="Tulis ulang kata sandi" :toggleMask="true" class="mb-12" fluid :feedback="false"></Password>
+                        </div>
+
+                        <Button label="Daftar" class="w-full mb-12" as="router-link" to="/dashboard"></Button>
+
+                        <br />
                     <ul class="p-0 m-0 list-none mb-6">
                         <li class="flex items-center justify-center py-2 border-b border-surface">
                             <span class="text-surface-900 dark:text-surface-0 leading-normal"
-                                >Baru
+                                >Sudah pernah
                                 <span class="text-surface-700 dark:text-surface-100">ke <span class="text-primary font-bold">Supermart?</span></span>
                             </span>
                         </li>
                         <li class="flex items-center justify-center py-2">
-                            <Button as="router-link" to="/auth/register" label="Buat akun Supermart" outlined rounded/>
+                            <Button as="router-link" to="/auth/login" label="Masuk akun Supermart" outlined rounded/>
                         </li>
                     </ul>
-                    
+                    </div>
                 </div>
             </div>
         </div>

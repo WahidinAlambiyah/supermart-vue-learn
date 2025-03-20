@@ -14,10 +14,10 @@ import TopbarWidget from '@/components/landing/TopbarWidget.vue';
                 <TopbarWidget />
             </div>
             <HeroWidget />
-            <FeaturesWidget />
+            <!-- <FeaturesWidget />
             <HighlightsWidget />
-            <PricingWidget />
-            <FooterWidget />
+            <PricingWidget /> -->
+            <!-- <FooterWidget /> -->
         </div>
     </div>
 </template>
