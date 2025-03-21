@@ -58,8 +58,13 @@ function isOutsideClicked(event) {
 
 <template>
     <div class="layout-wrapper" :class="containerClass">
-        <commerce-topbar></commerce-topbar>
-        <commerce-topbar-second></commerce-topbar-second>
+        <!-- <div> -->
+            <commerce-topbar></commerce-topbar>
+        <!-- </div> -->
+        <!-- <div> -->
+            <commerce-topbar-second></commerce-topbar-second>
+        <!-- </div> -->
+        
         <commerce-sidebar></commerce-sidebar>
         <div class="layout-main-container">
             <div class="layout-main">
