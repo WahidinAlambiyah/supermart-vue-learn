@@ -1,5 +1,6 @@
 import AppLayout from '@/layout/AppLayout.vue';
 import CommerceLayout from '@/layout/ecommerce/CommerceLayout.vue';
+import TestingLayout from '@/layout/testing/TestingLayout.vue';
 import { createRouter, createWebHistory } from 'vue-router';
 
 const router = createRouter({
@@ -10,6 +11,20 @@ const router = createRouter({
             name: 'landing',
             component: () => import('@/views/pages/Landing.vue')
         },
+        // START Testing Section
+        {
+            path: '/',
+            component: TestingLayout,
+            children: [
+                {
+                    path: '/testing',
+                    name: 'landing',
+                    component: () => import('@/views/pages/testing/TestingPage.vue')
+                }
+            ]
+        },
+        // END Testing Section
+        // START eCommerce Section
         {
             path: '/',
             component: CommerceLayout,
@@ -18,18 +33,14 @@ const router = createRouter({
                     path: '/home',
                     name: 'home',
                     component: () => import('@/views/pages/ecommerce/HomeCommerce.vue')
-                },
-            ] 
+                }
+            ]
         },
+        // END eCommerce Section
         {
             path: '/',
             component: AppLayout,
             children: [
-                {
-                    path: '/home',
-                    name: 'home',
-                    component: () => import('@/views/pages/ecommerce/HomeCommerce.vue')
-                },
                 {
                     path: '/dashboard',
                     name: 'dashboard',

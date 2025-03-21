@@ -4,6 +4,7 @@ import { computed, ref, watch } from 'vue';
 import CommerceFooter from './CommerceFooter.vue';
 import CommerceSidebar from './CommerceSidebar.vue';
 import CommerceTopbar from './CommerceTopbar.vue';
+import CommerceTopbarSecond from './CommerceTopbarSecond.vue';
 
 const { layoutConfig, layoutState, isSidebarActive } = useLayout();
 
@@ -57,13 +58,14 @@ function isOutsideClicked(event) {
 
 <template>
     <div class="layout-wrapper" :class="containerClass">
-        <app-topbar></app-topbar>
-        <app-sidebar></app-sidebar>
+        <commerce-topbar></commerce-topbar>
+        <commerce-topbar-second></commerce-topbar-second>
+        <commerce-sidebar></commerce-sidebar>
         <div class="layout-main-container">
             <div class="layout-main">
                 <router-view></router-view>
             </div>
-            <app-footer></app-footer>
+            <commerce-footer></commerce-footer>
         </div>
         <div class="layout-mask animate-fadein"></div>
     </div>

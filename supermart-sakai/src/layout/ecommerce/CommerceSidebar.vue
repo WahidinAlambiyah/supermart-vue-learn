@@ -4,7 +4,7 @@ import CommerceMenu from './CommerceMenu.vue';
 
 <template>
     <div class="layout-sidebar">
-        <app-menu></app-menu>
+        <commerce-menu></commerce-menu>
     </div>
 </template>
 
